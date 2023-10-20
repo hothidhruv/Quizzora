@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <!-- <script src="dashboard.js"></script> -->
+    <script src="ActionCellRendererComponent.js"></script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.js"></script>
+    <!-- <script src="main.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+    <title>Dashboard</title>
+</head>
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top  header-transparent">
+    <nav id="navbar" class="navbar">
+        <div class="logo">
+            <a href="profile.html"><img src="../img/quizzoralogo.png" alt="Quizzora"></a>
+        </div>
+        <!-- <div class="search-input-container">
+            <input type="text" class="search-input" placeholder="Find a quiz" data-cy="header-search-field">
+            <a class="" data-cy="header-search-button"><span class="search-icon-container">
+                    <i class="fa fa-search search-icon"></i></span></a>
+        </div> -->
+        <ul class="nav-ul">
+            <li><a class="nav-link scrollto " href="home.html">Home</a></li>
+            <li><a class="nav-link scrollto active" href="dashboard.html">Dashboard</a></li>
+        </ul>
+
+        <div class="email js-open-modal">
+            <div class="from">
+                <div class="from-contents">
+                    <div>
+                        <img src="../img/users/avatar1.jpg" alt="useravatara" class="avatar" id="nav-avatar">
+                    </div>
+                    <div class="name">Admin</div>
+                </div>
+            </div>
+        </div>
+        <div class="modalbox">
+            <div class="modal__header">
+                <label id="show-username" style="margin-left: 7px;">Admin</label>
+                <p id="show-email">admin@gmail.com</p>
+                <a href="#" class="js-close-modal">X</a>
+            </div>
+            <div class="modal-body nav-modal-body">
+                <ul role="tab" aria-controls="setting" aria-selected="true">
+                    <li data-toggle="modal" data-target="#exampleModal">
+                        <span><i class="fa fa-sign-out" aria-hidden="true"></i></span><a data-toggle="modal"
+                            data-target="#exampleModal" href="">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+
+</header>
+
+<body onload="checkAdmin()">
+    <section class="profilesetting">
+        <div class="animation-fade">
+            <div class="profile-sidepanel">
+                <!-- <div class="profile-tab-nav">
+
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="active" id="account-tab" data-toggle="pill" href="#account" role="tab"
+                            aria-controls="account" aria-selected="true">
+                            <i class="fa fa-home text-center mr-1"></i>
+                            Home
+                        </a>
+                        <a class="" id="password-tab" data-toggle="pill" href="#password" role="tab"
+                            aria-controls="password" aria-selected="false">
+                            <i class="fa fa-key text-center mr-1"></i>
+                            Dashboard
+                        </a>
+                        <a class="" id="delete-tab" data-toggle="pill" href="#delete-account" role="tab"
+                            aria-controls="delete-account-tab" aria-selected="false">
+                            <i class='fa fa-trash'></i>
+                            Logout
+                        </a>
+                    </div>
+                </div> -->
+                
+                <div class="tab-content profile-content" id="v-pills-tabContent">
+                    <div class="area">
+                        <ul class="circles">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="heading-box">
+                        <h3>Welcome Admin</h3>
+                    </div>
+                                        <!-- rigister user -->
+                    <div class="tab-pane fade show active profile-setting-container" id="account" role="tabpanel"
+                        aria-labelledby="account-tab" style="margin-bottom: 20px;">
+                        <div class="profiel-header">
+                            <i class="fa fa-users" aria-hidden="true" style="margin-right: 10px;"></i>
+                            <h5 style="margin-bottom: 14px;">Register Users</h5>
+                        </div>
+                        <div class="profile-body">
+                            <div id="myScoreGrid" style="height: 481px;" class="ag-theme-alpine"></div>
+                        </div>
+                    </div>
+                    <!-- user with score -->
+                    <div class="tab-pane fade show active profile-setting-container" id="account" role="tabpanel"
+                        aria-labelledby="account-tab">
+                        <div class="profiel-header">
+                            <i class="fa fa-users" aria-hidden="true" style="margin-right: 10px;"></i>
+                            <h5 style="margin-bottom: 14px;">Users exam data</h5>
+                        </div>
+                        <div class="profile-body">
+                            <div id="myGrid" style="height: 481px;" class="ag-theme-alpine"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div id="snackbar"></div>
+        <!-- logout modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Logout User</h5>
+                        <button type="button" class="close model-btn" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure ?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="model-btn" data-dismiss="modal">Cancel</button>
+                        <button onclick="logoutAdmin()" type="button" class="model-btn">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="../assets/vendor/aos/aos.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

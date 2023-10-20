@@ -1,0 +1,80 @@
+body {
+    background-color: #F9F9F9;
+}
+.form-control {
+    background-color: rgb(253, 253, 253);
+    border-radius: 7px;
+    cursor: pointer !important;
+}
+
+.center {
+    text-align: center;
+}
+
+.fa {
+    font-size: 17px;
+    text-decoration: none;
+    margin-left: 4px;
+    color: rgb(0, 0, 0);
+    padding: 8px;
+    width: 36px;
+    margin-top: -5px;
+    border: 1px solid #393E41;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    transition: .3s;
+    background-color: #393E41;
+    color: white;
+}
+.btn{
+    padding: 9px 50px 9px 50px;
+}
+.btn:hover{
+    background-color: #2d3d5f;
+}
+
+.opacity {
+    opacity: 0.5;
+}
+
+.linktext {
+    opacity: 0.7;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: -5px;
+}
+
+.error-msg {
+    color: #ff4c4c;
+    font-size: 15px;
+    margin-bottom: -4px;
+    margin-left: 7px;
+}
+
+.animation {
+    animation: animatezoom 0.6s
+}
+.animationzoomout {
+    animation: animatezoomout 0.6s
+}
+@keyframes animatezoom {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+@keyframes animatezoomout {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0);
+    }
+}

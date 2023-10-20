@@ -1,11 +1,420 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=h1, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Quizzora</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="img/quizlogo.png" rel="icon">
+  <!-- <link href="img/quizlogo.png" rel="apple-touch-icon"> -->
+
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Vendor CSS Files -->
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="index.css" rel="stylesheet">
+
 </head>
-<body>
-    <h1>Hothi dhruv</h1>
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top  header-transparent">
+  <div class="container d-flex align-items-center justify-content-between">
+
+    <div class="logo">
+      <h1>
+        <a href="index.html"><img src="img/logo.png" alt=""></a>
+      </h1>
+    </div>
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+        <li><a class="nav-link scrollto" href="#features">App Features</a></li>
+        <!-- <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li> -->
+        <!-- <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li> -->
+        <!-- <li><a class="nav-link scrollto" href="#faq">F.A.Q</a></li> -->
+        <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li> -->
+        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        <li><a class="getstarted scrollto" href="#" onclick="loginUser()">Login</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+  </div>
+</header><!-- End Header -->
+
+<body class="animation-fade">
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div
+          class="col-lg-6 d-lg-flex flex-lg-column justify-content-center align-items-stretch pt-5 pt-lg-0 order-2 order-lg-1"
+          data-aos="fade-up">
+          <div>
+            <h1>
+              <div class="typewriter">
+                <p style="text-align: center;">We are providing <br> <span class="typed-text"></span><span
+                    class="cursor">&nbsp;</span></p>
+              </div>
+            </h1>
+            <h2>Join our and Make big subjects easier to digest with flashcards and practice tests.</h2>
+            <div class="container">
+              <div class="bg"></div>
+              <div class="button"> <a href="/UserPanel/signin.html" class="active"
+                  style="background-color: #5777ba;">Sign up for free</a></div>
+              <a href="#" class="main-btn"><i class='bx bx-info-circle'></i>Learn More</a>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-lg-6 d-lg-flex flex-lg-column align-items-stretch order-1 order-lg-2 hero-img"
+          data-aos="fade-up">
+          <img src="img/quiz2.png" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+    <!-- ======= Details Section ======= -->
+    <section id="details" class="details">
+      <div class="container">
+        <h1 class="text">Ace your exams with Learn and Test</h1>
+        <div class="row content">
+          <div class="col-md-5" data-aos="fade-right">
+            <img src="img/practis.gif" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-4" data-aos="fade-up">
+            <h3>Practise with Learn</h3>
+            <p class="fst-italic">
+              <b>Based on spaced repetition principles, Learn mode lets you practice with multiple choice, true or
+                false,
+                written questions and more.</b>
+            </p>
+            <ul>
+              <li><i class="bi bi-check"></i>Understand and embrace your learning style...</li>
+              <li><i class="bi bi-check"></i>Put what you've been learning into use. ...</li>
+              <li><i class="bi bi-check"></i> Take charge of your learning.</li>
+              <li><i class="bi bi-check"></i> Set SMART goals. ...</li>
+            </ul>
+            <p>
+              With Quizzora the things you do to learn and grow your skills with multiple type of quiz.
+            </p>
+          </div>
+        </div>
+
+        <div class="row content">
+          <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
+            <img src="img/take test.gif" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-up">
+            <h3>Take a Test</h3>
+            <p class="fst-italic">
+              <b>Check your knowledge with practice tests so you’re prepared for your exams.</b>
+            </p>
+            <p>
+              Check your knowledge with different type of quiz and prepared for exams
+            </p>
+            <p>
+              Playing quiz games frequently improves their information retention, decisiveness, and analytical skills.
+              When players have a solid ability to retain information, their ability to answer a wide range of questions
+              improves. A higher level of decisiveness reduces mulling and overthinking, allowing players to react
+              faster.
+            </p>
+          </div>
+        </div>
+
+        <div class="row content">
+          <div class="col-md-5" data-aos="fade-right">
+            <img src="img/upgard.gif" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-5" data-aos="fade-up">
+            <h3>Upgrade yourself</h3>
+            <p> <b> allow you to get one step ahead of the rest. These quizzes build your general knowledge and also
+              boost your confidence. Quizzes also act as an icebreaker at schools, offices, or also, in some cases, at
+              home.</b></p>
+            <ul>
+              <li><i class="bi bi-check"></i>Fast Learning...</li>
+              <li><i class="bi bi-check"></i>Clear cut idea of any topic...</li>
+              <li><i class="bi bi-check"></i>Exercise different type of quiz...</li>
+            </ul>
+            <p>
+              The online quiz will find out different barriers regarding the level of your exam. It identifies gaps in
+              knowledge, build confidence level and increase concentration. It also helps in retaining knowledge for a
+              long time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Details Section -->
+
+    <!-- ======= App Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container">
+
+        <div class="section-title white">
+          <h2 class="white">App Features</h2>
+        </div>
+
+        <div class="row no-gutters white">
+          <div class="col-xl-7 d-flex align-items-stretch order-2 order-lg-1 ">
+            <div class="content d-flex flex-column justify-content-center ">
+              <div class="row ">
+                <div class="col-md-6 icon-box " data-aos="fade-up">
+                  <i class="fa fa-desktop white" aria-hidden="true"></i>
+                  <h4>Leaderboard</h4>
+                  <p class="white" style="opacity: 0.8;">Use the leaderboard to add an overview of responses to your
+                    questionnaire, so your respondents can
+                    see how their score compares to their peers or colleagues. </p>
+                </div>
+                <div class="col-md-6 icon-box white" data-aos="fade-up" data-aos-delay="100">
+                  <i class="fa fa-clock-o white" aria-hidden="true"></i>
+                  <h4>Quiz timer</h4>
+                  <p class="white" style="opacity: 0.8;">Add the quiz timer to limit the time your respondents will have
+                    to complete each question.</p>
+                </div>
+                <div class="col-md-6 icon-box " data-aos="fade-up" data-aos-delay="200">
+                  <i class="fa fa-random white" aria-hidden="true"></i>
+                  <h4>Randomize questions</h4>
+                  <p class="white" style="opacity: 0.8;">All of your content will be shuffled every time someone opens the Quiz.</p>
+                </div>
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                  <i class="fa fa-level-up white" aria-hidden="true"></i>
+                  <h4>Choose quiz difficulty</h4>
+                  <p class="white" style="opacity: 0.8;"> Group your quiz questions based on their difficulty level or select them randomly. ...</p>
+                </div>
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+                  <i class="fa fa-eye white" aria-hidden="true"></i>
+                  <h4>View correct answer options</h4>
+                  <p class="white" style="opacity: 0.8;">User can view all the correct answer onces user complete whole exam</p>
+                </div>
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
+                  <i class="fa fa-list-alt white" aria-hidden="true"></i>
+                  <h4>View question results</h4>
+                  <p class="white" style="opacity: 0.8;">Once user complete whole quiz user can see there score</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="image col-xl-5 d-flex align-items-stretch justify-content-center order-1 order-lg-2"
+            data-aos="fade-left" data-aos-delay="100">
+            <img src="img/features.svg" class="img-fluid" alt="">
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End App Features Section -->
+
+
+
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>What students are saying about us</h2>
+        </div>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="img/students/student1.jpeg" class="testimonial-img" alt="">
+                <h3>Karan Sharma</h3>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Overall, it is a great product that students love to use to practice ELA skills. I love that you can find/use other's quizzes instead of just having your own to use.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="img/students/student2.jpg" class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  An excellent program that helps students answer quickly, consolidate information, increase experience, and compete in answering questions
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="img/students/student3.jpg" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  I like that you can easily find a quiz so quickly. Additionally, I like how the questions and answers are show in student screens so they don't have to look up at the whiteboard to see which color to click like another quiz platform. That is what drew me to Quizizz in the first place and I have not went back.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="img/students/student4.jpeg" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  "I like the UI which is pretty smooth and neat, it's an easy-to-use platform for giving quizzes."
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="img/students/student5.jpeg" class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Quizzora is best plateform for practice for any exam. It's provide different type of quiz exam to upgrading self knowledge with giving quiz.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+    <!-- ======= Extra data ======= -->
+    <section style="padding: 25px 0;">
+      <div class="container">
+        <div class="row content">
+          <div class="col-md-5" data-aos="fade-right">
+            <img src="img/learn.gif" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-6 pt-4" data-aos="fade-up" style="margin-left: 30px; margin-top: 100px;">
+            <h2 class="section-title" style="color: #5777ba;">From school to uni, smash any subject</h2>
+            <p class="fst-italic" style="font-size:larger;">
+              From maths to medicine to modern languages, Quizzora is used by students in hundreds of different subjects
+              at school, university and beyond. Remember more, more efficiently — no matter what you’re studying.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Extra data -->
+  </main><!-- End #main -->
+
+<footer class="new_footer_area bg_color">
+  <div class="new_footer_top">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-3 col-md-6">
+                  <div class="f_widget company_widget wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+                      <h3 class="f-title f_600 t_color f_size_18">Get in Touch</h3>
+                      <p>Don’t miss any updates of new quizzes!</p>
+                      <form action="#" class="f_subscribe_two mailchimp" method="post" novalidate="true" _lpchecked="1">
+                          <input type="text" name="EMAIL" class="form-control memail" placeholder="Email">
+                          <button class="btn btn_get btn_get_two" type="submit">Subscribe</button>
+                          <p class="mchimp-errmessage" style="display: none;"></p>
+                          <p class="mchimp-sucmessage" style="display: none;"></p>
+                      </form>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                  <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                      <h3 class="f-title f_600 t_color f_size_18">Useful link</h3>
+                      <ul class="list-unstyled f_list">
+                          <li><a href="#home">Home</a></li>
+                          <li><a href="#features">App Features</a></li>
+                          <li><a href="#contact">Contact</a></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                  <div id="contact" class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                      <h3 class="f-title f_600 t_color f_size_18">Contact Us</h3>
+                      <ul class="list-unstyled f_list">
+                          <li><i class="fa fa-phone" aria-hidden="true" style="margin-right: 10px;"></i><a href="">+1 5589 55488 55</a></li>
+                          <li><i class="fa fa-envelope" aria-hidden="true" style="margin-right: 10px;"></i><a href="">quizzoraquery@gmial.com</a></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                  <div class="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
+                      <h3 class="f-title f_600 t_color f_size_18">Team Solutions</h3>
+                      <div class="f_social_icon">
+                          <a href="#" class="fa fa-facebook"></a>
+                          <a href="#" class="fa fa-twitter"></a>
+                          <a href="#" class="fa fa-linkedin"></a>
+                          <a href="#" class="fa fa-pinterest"></a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="footer_bg">
+          <div class="footer_bg_one"></div>
+          <div class="footer_bg_two"></div>
+      </div>
+  </div>
+  <div class="footer_bottom">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-lg-6 col-sm-7">
+                  <p class="mb-0 f_400">© quizzora All rights reserved.</p>
+              </div>
+              
+          </div>
+      </div>
+  </div>
+</footer>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="fa fa-arrow-up"
+      aria-hidden="true"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="index.js"></script>
+  <script src="assets/vendor/js/main.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz</title>
+  <link rel="stylesheet" href="quiz.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+</head>
+
+<body onload="selectQuiz()">
+
+  <!-- navbar  -->
+  <!-- <nav class="navbar navbar-sm navbar-light bg-light fixed-top" id="navbar" style="display: none;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Quiz</a>
+      <div style="margin-left: -27%;">
+        <i class="fa fa-home text-center mr-1" aria-hidden="true"></i>
+        <a class="navbar-item" href="../UserPanel/profile.html" style="margin-right: 10px;">Home</a>
+        <i class="fa fa-refresh" aria-hidden="true"></i>
+        <a class="navbar-item" onclick="reAttemppt()">ReAttempt</a>
+      </div>
+
+      <label for="attemptquestion" id="attemptquestion" style="color: #384b74;"></label>
+
+      <div>
+        <label for="second_count" id="timeleftlbl" style="color: #384b74;"></label>
+        <label for="second_count" id="quiztimer" style="color: #384b74;"></label>
+      </div>
+
+    </div>
+  </nav> -->
+  <nav id="navbar" class="navbar" style="display: none;">
+    <div class="container-fluid">
+      <!-- <a class="navbar-brand" href="#">Quiz</a> -->
+      <a href="../UserPanel/profile.html"><img class="logo" src="../img/logo.png" alt=""></a>
+      <div style="margin-left: -23%;" >
+        <ul style="margin-left: 43%;" id="nav-item">
+          <li><i class="fa fa-home text-center mr-1" aria-hidden="true"></i></li>
+          <li><a class="nav-link scrollto active" href="../UserPanel/profile.html"
+              style="padding: 0; margin-bottom: -6px;margin-left: 6px; margin-right: 22px;">Home</a></li>
+          <li class="nav-li"><i class="fa fa-refresh" aria-hidden="true"></i></li>
+          <li class="nav-li"><a class="nav-link scrollto" onclick="reAttemppt()"
+              style="padding: 0; margin-bottom: -6px; margin-left: 7px; margin-right: 21px;">ReAttempt</a></li>
+        </ul>
+      </div>
+      <label for="attemptquestion" id="attemptquestion" style="color: #384b74;"></label>
+      <ul>
+        <li><label for="second_count" id="timeleftlbl" style="color: #384b74;"></label></li>
+        <li><label for="second_count" id="quiztimer" style="color: #384b74;"></label></li>
+  </nav>
+
+  <section>
+    <!-- loader animation -->
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+
+    <!-- fade animation start  -->
+    <div class="animation-fade" style="margin-top: -32%; margin-left: 31%; position: fixed;">
+      <label for="second_count" id="timeleftlbl"></label>
+      <label for="second_count" id="quiztimer"></label>
+    </div>
+
+    <!-- quiz container  -->
+    <div class="quiz-container animation-fade" id="quiz" onload="quiztimer()">
+      <div id="radioButtonsWrapElem" class="quiz-header">
+        <h2 id="question-header"></h2>
+        <ul id="list">
+        </ul>
+      </div>
+
+      <div style="display: flex;justify-content: space-between;flex-direction: row-reverse;" id="all-btn">
+        <button id="next-btn" onclick="loadnextQuestion()">Next</button>
+        <button id="pre-btn" onclick="loadpreviousQuestion()">Previous</button>
+        <button id="submit-btn" data-toggle="modal" data-target="#exampleModal">Submit</button>
+      </div>
+    </div>
+
+    <!-- score container  -->
+    <div class="score-container" id="score-container">
+      <!-- exam pass conatiner start -->
+      <div class="success-container" id="success-container">
+        <img src="../img/quiz type/trophy.gif" id="trophy-img" alt="trophy">
+        <img src="../img/quiz type/animation.gif" id="animation" alt="animation">
+        <img src="../img/quiz type/animation1.gif" id="animation1" alt="animation">
+        <h1 id="congrs-text">Congratulations</h1>
+        <h2 id="score" style="text-align: center;"></h2>
+        <div>
+          <div class="button" id="button-7" onclick="backHome()">
+            <div id="dub-arrow"><img
+                src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-arrow-48-240.png?raw=true"
+                alt="" /></div>
+            <a>Back to home</a>
+          </div>
+          <div class="button" id="button-7" onclick="viewAnswer()">
+            <div id="dub-arrow"><img
+                src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-arrow-48-240.png?raw=true"
+                alt="" /></div>
+            <a>View answers</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- fail exam container -->
+      <div class="fail-container" id="fail-container">
+        <img src="../img/quiz type/fail.gif" id="fail-img" alt="trophy">
+        <h1 id="fail-text">Your Score is to low</h1>
+        <h2 id="score1" style="margin-left: 162px;"></h2>
+        <div>
+          <div class="button" id="button-7" onclick="backHome()">
+            <div id="dub-arrow"><img
+                src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-arrow-48-240.png?raw=true"
+                alt="" /></div>
+            <a>Back to home</a>
+          </div>
+          <div class="button" id="button-7" onclick="viewAnswer()">
+            <div id="dub-arrow"><img
+                src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-arrow-48-240.png?raw=true"
+                alt="" /></div>
+            <a>View answers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- quiz selecter container  -->
+    <div class="quiztype-container" id="selectQuiz">
+      <div class="content animation-fade">
+        <h2 style="text-align: center" ;>Select Quiz</h2>
+        <label for=" question-number">Number of Questions:</label> <br>
+        <input type="number" name="numberof-question" id="question_amount" class="form-control" min="1"
+          placeholder="You can atampt maximum 50 question at a time" max="50">
+        <label for="question-Difficulty">Select Difficulty:</label> <br>
+        <select name="question_difficulty" class="form-select form-control" id="question_difficulty">
+          <option value="any">Any Difficulty</option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+        <button type="button" onclick="DelayRedirect()"
+          style="width: 100%;border-radius: 14px;margin-bottom: 25px;">Start Exam</button>
+        <label for="second_count" id="lblCount" style="margin-left: 211px;margin-right: 218px;"></label>
+      </div>
+    </div>
+
+    <!-- view answer container -->
+    <div class="allquestion-container" id="viewAnswer">
+      <div class="question-container" id="question-container">
+
+      </div>
+      <div style="display: flex;justify-content: space-between;flex-direction: row-reverse;">
+        <button id="nextanswer-btn" class="viewans-btn" onclick="nextviewAnswer()">Next</button>
+        <button id="preanswer-btn" class="viewans-btn" onclick="previewAnswer()">Previous</button>
+      </div>
+      <div class="button" id="button-7" onclick="backHome()" style="margin-left: 40%;">
+        <div id="dub-arrow"><img
+            src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-arrow-48-240.png?raw=true"
+            alt="" /></div>
+        <a>Back to home</a>
+      </div>
+    </div>
+
+    <!-- submit quiz  Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"aria-hidden="true">
+      <div class="modal-dialog" role="document" style="top : 25%">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Submit Quiz</h5>
+            <button type="button" id="closemodule-btn" class="close model-btn" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Submit Quiz ??
+          </div>
+          <div class="modal-footer" style="justify-content: space-around;">
+            <button type="button" class="model-btn" data-dismiss="modal">Cancel</button>
+            <button type="button" class="model-btn" onclick="submitData()" data-dismiss="modal" aria-label="Close">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- quiz selecter conatiner end -->
+  </section>
+  <script type="text/javascript" src="quiz.js"></script>
+</body>
+
+</html>

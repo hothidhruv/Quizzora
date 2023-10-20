@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sending Mail</title>
+  <div>
+    <table border="0" align="center" cellspacing="0" cellpadding="0" bgcolor="white" width="650">
+      <tr>
+        <td>
+          <div>
+            <!-- Child table -->
+            <table border="0" cellspacing="0" cellpadding="0" style="color:#0f3462; font-family: sans-serif;">
+              <tr>
+                <td>
+                  <h2 style="text-align:center; margin: 0px; padding-bottom: 25px; margin-top: 25px;">
+                    Quiz<span style="color:lightcoral">zora</span></h2>
+                    <img src="https://www.linkpicture.com/q/quizlogo.png" alt="Wisconsin Pollinators" height="50px"
+                    style="display:block;margin:auto;padding-bottom: 25px;">
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center;">
+                  <h1 style="margin: 0px;padding-bottom: 25px; text-transform: uppercase;">Congratulations</h1>
+                  <h4 style="margin: 0px;padding-bottom: 25px;font-size:22px;">You have sucessfully submited quiz</h4>
+                  <h2 style="margin: 0px; padding-bottom: 25px;">Your Score is :</h2>
+  
+                  <!-- <img src="https://i.ibb.co/jzpyV3w/124de3d1b5e12f1d8fcec1685e6343-unscreen.gif" alt="Wisconsin Pollinators" style="display:block;margin:auto;padding-bottom: 25px; position: relative;"> -->
+                  <h2 style="margin: 0px; padding-bottom: 25px; position: absolute;">`+ score +` Out of `+ quizdata.length
+                    +`</h2>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align:center;">
+                  <h2 style="padding-top: 25px; line-height: 1; margin:0px;">Need Help?</h2>
+                  <div style="margin-bottom: 25px; font-size: 15px;margin-top:7px;">Contact us on
+                    sahilbhayni6745@gmail.com
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <!-- /Child table -->
+          </div>
+  
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</head>
+
+<body>
+  <form method="post">
+    <input type="button" value="Send Mail" onclick="sendEmail()" />
+  </form>
+</body>
+
+</html>

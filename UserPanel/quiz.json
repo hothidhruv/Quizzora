@@ -1,0 +1,58 @@
+{
+   "quiztype": [
+      {
+         "id": 9,
+         "img": "../img/quiz type/knowleage.jpg",
+         "Heading": "General Knowledge",
+         "Description": "General Knowledge quiz are provided for your competitive exams, placement interviews tests."
+      },
+      {
+         "id": 17,
+         "img": "../img/quiz type/science.jpeg",
+         "Heading": "Science & Nature",
+         "Description": "The science quiz aims to inculcate in the minds of young students a spirit of scientific enquiry and analytical."
+      },
+      {
+         "id": 21,
+         "img": "../img/quiz type/sport.jpg",
+         "Heading": "Sport Quiz",
+         "Description": "Quizzes can be used as a brief assessment in education and similar fields to measure growth in knowledge, abilities, or skills."
+      },
+      {
+         "id": 23,
+         "img": "../img/quiz type/history.jpeg",
+         "Heading": "History Quiz",
+         "Description": "Take these quizzes at Encyclopedia Britannica to test your knowledge on a variety of fun and interesting topics including Animals, Art, Music, Pop Culture"
+      },
+      {
+         "id": 27,
+         "img": "../img/quiz type/animals.jpg",
+         "Heading": "Animals",
+         "Description": "Test your knowledge of the animal kingdom with these fun, educational, and exciting trivia questions."
+      },
+      {
+         "id": 25,
+         "img": "../img/quiz type/art.jpeg",
+         "Heading": "Art",
+         "Description": "Test your knowledge of famous artists, techniques, and art movements with these art quiz questions!"
+      },
+      {
+         "id": 28,
+         "img": "../img/quiz type/vehical.jpg",
+         "Heading": "Vehicles",
+         "Description": "Test your knowledge of famous artists, techniques, and art movements with these art quiz questions!"
+      },
+      {
+         "id": 15,
+         "img": "../img/quiz type/gaming.jpg",
+         "Heading": "Gaming Quiz",
+         "Description": "Test your knowledge of famous artists, techniques, and art movements with these art quiz questions!"
+      },
+      {
+         "id": 24,
+         "img": "../img/quiz type/politics.jpeg",
+         "Heading": "Politics",
+         "Description": "Test your knowledge of famous artists, techniques, and art movements with these art quiz questions!"
+      }
+   ]
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ag-Grid Basic Example</title>
+    <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.js"></script>
+    <!-- <script src="main.js"></script> -->
+</head>
+
+<body>
+    <div id="myGrid" style="height: 200px; width:500px;" class="ag-theme-alpine"></div>
+
+    <script type="text/javascript">
+       // Function to demonstrate calling grid's API
+       function deselect(){
+           gridOptions.api.deselectAll()
+       }
+
+       // Grid Options are properties passed to the grid
+       const gridOptions = {
+
+         // each entry here represents one column
+         columnDefs: [
+           { field: "make" },
+           { field: "model" },
+           { field: "price" },
+         ],
+
+         // default col def properties get applied to all columns
+         defaultColDef: {sortable: true, filter: true},
+
+         rowSelection: 'multiple', // allow rows to be selected
+         animateRows: true, // have rows animate to new positions when sorted
+
+         // example event handler
+         onCellClicked: params => {
+           console.log('cell was clicked', params)
+         }
+       };
+
+       // get div to host the grid
+       const eGridDiv = document.getElementById("myGrid");
+       // new grid instance, passing in the hosting DIV and Grid Options
+       new agGrid.Grid(eGridDiv, gridOptions);
+
+       // Fetch data from server
+       fetch("https://www.ag-grid.com/example-assets/row-data.json")
+       .then(response => response.json())
+       .then(data => {
+         // load fetched data into grid
+         gridOptions.api.setRowData(data);
+       });
+    </script>
+</body>
+
+</html>
+
+
+
+<!-- var userid = userdata[i].id;
+            var firstname = userdata[i].firstname;
+            var lastname = userdata[i].lastname;
+            var username = userdata[i].username;
+            var email = userdata[i].email;
+
+            // var table = document.getElementById("tableData");
+            // var rowCount = table.rows.length;
+            // var row = table.insertRow(rowCount);
+
+            // row.insertCell(0).innerHTML = i + 1;
+            // row.insertCell(1).innerHTML = firstname;
+            // row.insertCell(2).innerHTML = lastname;
+            // row.insertCell(3).innerHTML = username;
+            // row.insertCell(4).innerHTML = email;
+            // row.insertCell(5).innerHTML = "<i class='fa fa-trash' onClick = 'deleteUser(" + userid + ")'></i>"; -->
+
+
+
+            function deleteUser(id) {
+              alert(id);
+              debugger;
+              var userdata = JSON.parse(localStorage.getItem('storeuser'));
+          
+              for (var i = 0; i < userdata.length; i++) {
+                  if (id == userdata[i].id) {
+                      const index = userdata.findIndex(userdata => userdata.id == id);
+                      if (index > -1); {
+                          if (confirm("Are you sure ?")) {
+                              userdata.splice(index, 1);
+                              localStorage.setItem('storeuser', JSON.stringify(userdata));
+                              window.location.reload("dashboard.html");
+                          }
+                          else {
+                              return ("dashboard.html")
+                          }
+                      }
+                  }
+              }
+          }
